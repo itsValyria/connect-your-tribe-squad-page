@@ -1,24 +1,35 @@
 <%- include('./partials/head') %>
 
-<h2>Students</h2>
-<!-- <ul>
-  <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
-  <% }) %>
-</ul> -->
-<ul>
-  <% persons.forEach(person => {
-      if(person.squad_id == 3) {%>
-        <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
-  <% }}) %>
-</ul>
+<main class="main">
+  <ul class="main__list">
 
-<!-- <main>
-  <ul>
+    <% persons.forEach(person => {
+      if(person.squad_id == 3) {%>
+
     <li>
+      
+      <div class="main__card--container">
+        <div class="main__card--positioning">
+
+          <!-- Front -->
+          <div class="main__card--front main__card">
+            <img class="main__card--background" src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>" onerror="this.src='assets/placeholder.jpg'">
+            <h1 class="main__card--name"><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
+            <h2 class="main__card--nickname"><%= person.nickname %></h2>
+          </div>
+    
+          <!-- Back -->
+          <div class="main__card--back main__card">
+    
+          </div>
+
+        </div>
+      </div>
 
     </li>
+    <% }}) %>
+
   </ul>
-</main> -->
+</main>
 
 <%- include('./partials/foot') %>

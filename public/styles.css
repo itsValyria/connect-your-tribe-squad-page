@@ -1,0 +1,125 @@
+/* ------------------ Fonts ------------------ */
+
+@font-face {
+  font-family: 'ReallyAwesome';
+  src: url('fonts/Really-Awesome.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('fonts/Quicksand.ttf') format('opentype');
+}
+
+/* ------------------ Root ------------------ */
+
+:root {
+  --white: #fff;
+  --grey: #aaa;
+  --black: #202020;
+}
+
+/* ------------------ Elements ------------------ */
+
+body {
+  width: 80vw;
+  margin: 6em auto;
+  line-height: 1.6;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(#fff, #ffc6d0);
+
+  /* TODO: LATER WEGHALEN */
+  min-height: 100vh;
+}
+
+h1, h2, h3, p {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+}
+
+ul, li, button {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------ Grid ------------------ */
+
+.main__list {
+  display: grid;
+  gap: 4em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* ------------------ Flip card ------------------ */
+
+.main__card--container {
+  width: 15em;
+  height: 15em;
+  perspective: 1000px;
+}
+
+.main__card--positioning {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* TODO: When making responsive, place this in a PC media query. */
+.main__card--container:hover .main__card--positioning {
+  transform: rotateY(180deg);
+}
+
+.main__card--front, .main__card--back {
+  width: 15em;
+  height: 15em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.main__card--front {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.637));
+  border-radius: 12px;
+  position: absolute;
+}
+
+.main__card--back {
+  position: absolute;
+  border-radius: 12px;
+  transform: rotateY(180deg);
+  background-color: var(--grey);
+}
+
+/* ------------------ Content Front ------------------ */
+
+.main__card--background {
+  width: 15em;
+  height: 15em;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.main__card--name {
+  color: white;
+  margin-top: 6.6em;
+  font-size: 1.4em;
+}
+
+.main__card--nickname {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+
+/* ------------------ Content Back ------------------ */
+
+/* ------------------ Media Queries ------------------ */
