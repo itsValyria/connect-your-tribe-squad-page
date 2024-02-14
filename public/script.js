@@ -1,9 +1,10 @@
-// If image is invalid
-// const img = ('img');
+// Card flip outside of PC
 
-// img.addEventListener('error', function handleError() {
-//   const defaultImage =
-//     'assets/placeholder.jpg';
-//   img.src = defaultImage;
-//   img.alt = 'default';
-// }); 
+var cards = document.querySelectorAll('.main__card--positioning');
+
+cards.forEach((card) => {
+  card.addEventListener('click', function() {
+    console.log(card)
+    card.classList.toggle('main__card--flip');
+  });
+});

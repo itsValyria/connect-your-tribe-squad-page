@@ -91,6 +91,10 @@ ul, li, button {
   background-color: var(--grey);
 }
 
+.main__card--flip {
+  transform: rotateY(180deg);
+}
+
 /* ------------------ Content Front ------------------ */
 
 .main__card--background {
