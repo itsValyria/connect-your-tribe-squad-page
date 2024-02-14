@@ -16,6 +16,9 @@
   --white: #fff;
   --grey: #aaa;
   --black: #202020;
+  --turqoise: #63e3bb;
+  --lavender: #a374f3;
+  --navy: #040444;
 }
 
 /* ------------------ Elements ------------------ */
@@ -25,7 +28,8 @@ body {
   margin: 6em auto;
   line-height: 1.6;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(#fff, #ffc6d0);
+  color: var(--white);
+  background: linear-gradient(#a374f3, #040444);
 }
 
 h1, h2, h3, p {
@@ -88,7 +92,7 @@ ul, li, button {
   position: absolute;
   border-radius: 12px;
   transform: rotateY(180deg);
-  background-color: var(--grey);
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(198, 198, 198));
 }
 
 .main__card--flip {
@@ -122,6 +126,14 @@ ul, li, button {
 }
 
 /* ------------------ Content Back ------------------ */
+
+
+
+/* ------------------ Filters ------------------ */
+
+select {
+  margin: 2em 1em;
+}
 
 /* ------------------ Media Queries ------------------ */
 

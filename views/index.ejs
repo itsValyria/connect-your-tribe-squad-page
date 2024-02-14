@@ -1,6 +1,24 @@
 <%- include('./partials/head') %>
 
 <main class="main">
+
+  <!-- Filtering -->
+  <label for="filter">Filter by</label>
+  <select name="filter">
+    <option value="student">Student</option>
+    <option value="teacher">Teacher</option>
+    <option value="has_avatar">With avatar</option>
+    <option value="no_avatar">Without avatar</option>
+  </select>
+
+  <!-- Sorting -->
+  <label for="sort">Sort by</label>
+  <select name="sort">
+    <option value="a-z">A-Z</option>
+    <option value="z-a">Z-A</option>
+    <option value="id">By ID</option>
+  </select>
+
   <ul class="main__list">
 
     <% persons.forEach(person => {
