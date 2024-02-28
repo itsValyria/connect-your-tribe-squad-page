@@ -141,6 +141,19 @@ ul, li, button {
   font-size: 1.4em;
 }
 
+/* ------------------ Content Person Page ------------------ */
+
+.person__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person__avatar {
+  border: 2em solid var(--white);
+  border-bottom: 6em solid var(--white);
+}
+
 /* ------------------ Filters ------------------ */
 
 select {

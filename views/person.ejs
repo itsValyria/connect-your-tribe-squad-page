@@ -1,8 +1,31 @@
 <!-- Hier word de header geinclude -->
 <%- include('partials/head') %>
 
-<main>
-    
+<main class="person__main">
+
+  <section class="person__left">
+		<img class="person__avatar" src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>" onerror="this.src='assets/placeholder.jpg'">
+  </section>
+
+  <section class="person__right">
+
+		<form method="post" action="/person/<%= person.id %>">
+			<label>
+				Laat een berichtje achter!
+				<textarea required name="textbox"></textarea>
+			</label>
+			<button type="submit">Verstuur</button>
+		</form>
+
+		<section class="person__messages">
+			<h3>Berichtenbord</h3>
+			<ul>
+				<% messages.forEach(message => { %>
+					<li><%= message %></li> 
+				<% }) %>
+			</ul>
+		</section>
+  </section>
 </main>
 
 <!-- Hier word de foot geinclude -->
