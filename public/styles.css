@@ -24,8 +24,6 @@
 /* ------------------ Elements ------------------ */
 
 body {
-  width: 90vw;
-  margin: 6em auto;
   line-height: 1.6;
   font-family: 'Quicksand', sans-serif;
   color: var(--black);
@@ -47,7 +45,9 @@ ul, li, button {
 /* ------------------ Grid ------------------ */
 
 .main__list {
+  margin: 6em 6em;
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -143,15 +143,157 @@ ul, li, button {
 
 /* ------------------ Content Person Page ------------------ */
 
+.custom__body {
+  margin: 0 auto;
+}
+
+.person__back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 2em;
+  font-size: 1.4em;
+  text-decoration: none;
+  color: unset;
+  font-weight: bold;
+}
+
+.person__back img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.6em;
+}
+
 .person__main {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  min-height: 100vh;
+}
+
+.person__name {
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+  margin-top: 13em;
+  font-size: 2em;
+}
+
+.person__nickname {
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+  text-transform: uppercase;
+  font-size: 1.4em;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+
+
+.person__avatar--overlay {
+  width: 28em;
+  height: 32em;
+  position: absolute;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 16px;
 }
 
 .person__avatar {
+  width: 24em;
+  height: 24em;
   border: 2em solid var(--white);
   border-bottom: 6em solid var(--white);
+  border-radius: 16px;
+}
+
+.person__form {
+  display: flex;
+  flex-direction: column;
+  width: 28em;
+}
+
+.person__form button {
+  margin: 1em auto;
+  border: none;
+  border-radius: 16px;
+  text-decoration: none;
+  background-color: var(--white);
+  height: 2.6em;
+  width: 10em;
+  font-size: 1.2em;
+  font-family: 'Quicksand';
+  font-weight: bold;
+  transition: ease-in-out 600ms;
+}
+
+.person__form textarea {
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  background-color: var(white);
+  font-size: 1.2em;
+  font-family: 'Quicksand';
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  height: 1.4em;
+}
+
+.person__form button:hover {
+  transform: scale(1.05);
+}
+
+.person__form h3 {
+  font-size: 2em;
+  margin-top: 0.4em;
+}
+
+.person__messages {
+  color: var(--black);
+}
+
+.person__messages h3 {
+  font-size: 2em;
+}
+
+.person__messages--box {
+  width: 28em;
+  height: 20em;
+  /* background-color: var(--white); */
+  border-radius: 16px;
+  /* box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); */
+  display: flex;
+  flex-direction: column;
+}
+
+.person__messages--box li {
+  color: var(--black);
+  background-color: var(--white);
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 12px;
+}
+
+.person__aboutme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 28em;
+  height: 32em;
+  background-color: var(--white);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 16px;
+}
+
+.person__aboutme h3 {
+  font-size: 2em;
+}
+
+.person__aboutme p {
+  font-size: 1.4em;
+  max-width: 80%;
+  text-align: center;
 }
 
 /* ------------------ Filters ------------------ */
@@ -165,36 +307,44 @@ select {
 
 @media screen and (max-width: 767px) {
 
-  body, main, ul, li {
-    width: 17em;
-  }
-
   .main__list {
     grid-template-columns: 1fr;
+  }
+
+  .person__main {
+    display: grid;
     gap: 4em 0;
+    margin-top: 8em;
+    margin-bottom: 8em;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
-  li {
-    margin: 0 auto;
-  }
-
   .main__list {
     grid-template-columns: 1fr 1fr;
-    gap: 4em;
+
+  }
+
+  .person__main {
+    display: grid;
+    gap: 4em 0;
+    margin-top: 8em;
+    margin-bottom: 8em;
   }
 }
 
 @media screen and  (min-width: 1024px) and (max-width: 1599px) {
-  li {
-    margin: 0 auto;
-  }
 
   .main__list {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 4em;
+  }
+
+  .person__main {
+    display: grid;
+    gap: 4em 0;
+    margin-top: 8em;
+    margin-bottom: 8em;
   }
 }
 

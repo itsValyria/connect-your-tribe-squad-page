@@ -3,28 +3,40 @@
 
 <main class="person__main">
 
+	<a class="person__back" href="/"><img src="/assets/back.svg">Back</a>
+
+	<!-- 1 | Foto -->
   <section class="person__left">
-		<img class="person__avatar" src="<%= (person.avatar == '') ? 'assets/placeholder.jpg' : person.avatar %>" onerror="this.src='assets/placeholder.jpg'">
+		<div class="person__avatar--overlay">
+			<h1 class="person__name"><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
+			<h2 class="person__nickname"><%= person.nickname %></h2>
+		</div>
+		<img class="person__avatar" src="<%= (person.avatar == '') ? '/assets/placeholder.jpg' : person.avatar %>" onerror="this.src='/assets/placeholder.jpg'">
   </section>
 
-  <section class="person__right">
+	<!-- 2 | About me -->
+	<section class="person__aboutme">
+		<h3>About me</h3>
+		<p><%= person.bio %></p>
+	</section>
 
-		<form method="post" action="/person/<%= person.id %>">
-			<label>
-				Laat een berichtje achter!
-				<textarea required name="textbox"></textarea>
-			</label>
-			<button type="submit">Verstuur</button>
-		</form>
+	<!-- 3 | Berichtenbord -->
+  <section class="person__right">
 
 		<section class="person__messages">
 			<h3>Berichtenbord</h3>
-			<ul>
+			<ul class="person__messages--box">
 				<% messages.forEach(message => { %>
-					<li><%= message %></li> 
+					<li><%= message %></li>
 				<% }) %>
 			</ul>
 		</section>
+
+		<form class="person__form" method="post" action="/person/<%= person.id %>">
+			<h3 for="input">Laat een berichtje achter!</h3>
+			<textarea name="textbox" placeholder="Begin met typen..." required></textarea>
+			<button type="submit">Verstuur</button>
+		</form>
   </section>
 </main>
 
