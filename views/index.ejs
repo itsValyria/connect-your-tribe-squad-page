@@ -1,3 +1,4 @@
+<!-- Hier word de header geinclude -->
 <%- include('./partials/head') %>
 
 <main class="main">
@@ -21,6 +22,8 @@
 
   <ul class="main__list">
 
+    <!-- Dit is een loop die eigenlijk zegt dat alle HTML uitgevoerd moet worden voor
+         elke persoon, maar alleen als deze person squad ID 3 heeft. -->
     <% persons.forEach(person => {
       if(person.squad_id == 3) {%>
 
@@ -53,4 +56,5 @@
   </ul>
 </main>
 
+<!-- Hier word de foot geinclude -->
 <%- include('./partials/foot') %>
