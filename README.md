@@ -4,6 +4,8 @@
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 Dit is een squadpage voor mijn squad, namelijk squad 1D
 
+Bekijk [hier](connect-your-tribe-squad-page-tsoz.onrender.com/) het eindresultaat!
+
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
