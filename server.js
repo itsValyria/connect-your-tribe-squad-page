@@ -58,7 +58,7 @@ app.post('/person/:id', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   messagess.push(request.body.textbox)
   response.redirect(303, '/person/' + request.params.id)
-
+  
 })
 
 // Stel het poortnummer in waar express op moet gaan luisteren
